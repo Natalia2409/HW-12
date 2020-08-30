@@ -4,18 +4,22 @@ function gender() {
     }
 }
 
+function change(el) {
+    let head = el.slice(0,4)
+    let url = el.slice(4)
+    if(url[0] === 's'){
+        return el;
+    }
+    else{
+        return `${head}s${url}`;
+    }
+};
+
 let func = async (characters) => {
     return await fetch(`https://swapi.dev/api/${characters}`)
            .then(result => result.json())
            .then(result => result.characters).then(data => data.forEach(el => {
-                                    let http = el.slice(0,4)
-                                    let url = el.slice(4)
-                                    if(url[0] === 's'){
-                                        return el;
-                                    }
-                                    else{
-                                        `${http}s${url}`
-                                    }
+                                    change(el);
                                     fetch(el)
                                    .then(result => result.json())
                                    .then(result => {
