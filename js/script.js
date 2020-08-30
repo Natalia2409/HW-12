@@ -1,9 +1,3 @@
-function gender() {
-    if('male') {
-        div.innerHTML = `<p><img src="img/male.png"></p>`
-    }
-}
-
 let func = async (characters) => {
     return await fetch(`https://swapi.dev/api/${characters}`)
            .then(result => result.json())
