@@ -5,7 +5,7 @@ function gender() {
 }
 
 let func = async (characters) => {
-    return await fetch(`https://swapi.dev/api/${characters}`)
+    return await fetch(`http://swapi.dev/api/${characters}`)
            .then(result => result.json())
            .then(result => result.characters).then(data => data.forEach(el => fetch(el)
                                    .then(result => result.json())
@@ -27,7 +27,7 @@ let func = async (characters) => {
 }
 
 let planets = async (a = 1) => {
-    return await fetch(`https://swapi.dev/api/planets/?page=${a}`)
+    return await fetch(`http://swapi.dev/api/planets/?page=${a}`)
            .then(result => result.json())
            .then(result => {
                 result.results.forEach(el => {
