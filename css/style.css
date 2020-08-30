@@ -104,3 +104,15 @@ option, select {
     height: 60px;
     width: 60px;
 }
+
+
+@media(max-width: 600px) {
+    #place {
+        display: block;
+        float: left;
+    }
+    .list, .list1 {
+        margin-left: 20px;
+        width: 30%;
+    }
+}
