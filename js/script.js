@@ -18,7 +18,7 @@ function change(el) {
 let func = async (characters) => {
     return await fetch(`https://swapi.dev/api/${characters}`)
            .then(result => result.json())
-           .then(result => result.characters).then(data => data.map(el => el.slice(0,4) + 's' + el.slice(5))).then(data => data.forEach(el => 
+           .then(result => result.characters).then(data => data.map(el => el.slice(0,4) + 's' + el.slice(4))).then(data => data.forEach(el => 
                                     fetch(el)
                                    .then(result => result.json())
                                    .then(result => {
@@ -98,6 +98,7 @@ btn1.addEventListener('click', () => {
         }
     });
 }); 
+
 
 
 
