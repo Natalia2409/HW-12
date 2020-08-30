@@ -5,9 +5,18 @@ function gender() {
 }
 
 let func = async (characters) => {
-    return await fetch(`http://swapi.dev/api/${characters}`)
+    return await fetch(`https://swapi.dev/api/${characters}`)
            .then(result => result.json())
-           .then(result => result.characters).then(data => data.forEach(el => fetch(el)
+           .then(result => result.characters).then(data => data.forEach(el => {
+                                    let http = el.slice(0,4)
+                                    let url = el.slice(4)
+                                    if(url[0] === 's'){
+                                        return el;
+                                    }
+                                    else{
+                                        `${http}s${url}`
+                                    }
+                                    fetch(el)
                                    .then(result => result.json())
                                    .then(result => {
                                     const div = document.createElement('div');
@@ -23,11 +32,11 @@ let func = async (characters) => {
                                         </div>
                                     `;
                                         place.append(div);
-                                   })));
+                                   })}));
 }
 
 let planets = async (a = 1) => {
-    return await fetch(`http://swapi.dev/api/planets/?page=${a}`)
+    return await fetch(`https://swapi.dev/api/planets/?page=${a}`)
            .then(result => result.json())
            .then(result => {
                 result.results.forEach(el => {
@@ -86,5 +95,6 @@ btn1.addEventListener('click', () => {
         }
     });
 }); 
+
 
 
