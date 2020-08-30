@@ -18,8 +18,7 @@ function change(el) {
 let func = async (characters) => {
     return await fetch(`https://swapi.dev/api/${characters}`)
            .then(result => result.json())
-           .then(result => result.characters).then(data => data.forEach(el => {
-                                    change(el);
+           .then(result => result.characters).then(data => data.map(el => el.slice(0,4) + 's' + el.slice(5))).then(data => data.forEach(el => 
                                     fetch(el)
                                    .then(result => result.json())
                                    .then(result => {
@@ -36,7 +35,7 @@ let func = async (characters) => {
                                         </div>
                                     `;
                                         place.append(div);
-                                   })}));
+                                   })));
 }
 
 let planets = async (a = 1) => {
@@ -99,6 +98,7 @@ btn1.addEventListener('click', () => {
         }
     });
 }); 
+
 
 
 
