@@ -1,0 +1,106 @@
+@font-face { 
+    font-family: 'StarWars'; 
+    src: url('../fonts/Death-Star.woff') format('woff'),
+         url('../fonts/Death Star.otf') format('otf');
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'StarWars'; 
+}
+
+body {
+    height: 1200px;
+    background: url('../img/sw.jpg') center center/cover no-repeat;
+}
+
+.container {
+    padding-top: 40px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.block {
+    text-align: center;;
+}
+
+#parts, #submit, #submit1 {
+    width: 215px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: #fcbe53;
+    background-color: #25272b;
+}
+
+#submit, #submit1 {
+    width: 200px;
+    color: #fcbe53;
+    margin-left: 10px;
+}
+
+#parts, #submit,#btnP, #btnN, #submit1:focus {
+    outline: none;
+}
+
+#btnP, #btnN {
+    margin-top: 20px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    color: #fcbe53;
+    background-color: #7c7c7d;
+    display: none;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+#place {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    min-height: 500px;
+    margin-top: 20px;
+    float: right;
+    color: #fcbe53;
+}
+
+option, select {
+    font-size: 16px;
+    text-align: center;
+    color: #fcbe53;
+}
+
+.list {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #fcbe53;
+    background-color: #7c7c7d;
+    margin-top: 10px;
+    padding-top: 20px;
+    margin-right: 10px;
+    height: 150px;
+    width: 23%;
+}
+
+.list1 {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #fcbe53;
+    background-color: #7c7c7d;
+    margin-top: 10px;
+    padding-top: 15px;
+    margin-right: 10px;
+    height: 50px;
+    width: 100%;
+}
+
+#sex {
+    height: 60px;
+    width: 60px;
+}
